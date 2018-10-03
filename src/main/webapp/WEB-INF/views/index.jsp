@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Edwin-Cobos
+  Date: 9/21/2018
+  Time: 6:03 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -33,11 +40,26 @@
                     <input type="submit" value="Filter">
                 </form:form>
                 <div>
-                    <a  >New Article</a>
+                    <a href="<c:url value="/create"/>">New Article</a>
                 </div>
             </div>
             <div>
+                <c:forEach var="article" items="${articles}">
+                    <div class="article">
+                        <img src="<c:url value="${article.image}"/>" height="200">
+                        <br/>
+                        <strong><a href="<c:url value="/article/${article.id}" />">${article.title}</a></strong>
+                        <br/>
+                            ${article.category}
+                        <br/>
+                            ${article.publicationDate}
+                        <br>
 
+                        <br>
+                            ${article.content}
+                        <br>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </layout:put>
