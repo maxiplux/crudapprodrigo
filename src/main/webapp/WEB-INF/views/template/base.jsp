@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="<c:url value='/style.css'/>"/>
+    <link rel="stylesheet" type="text/css" media="screen"  />
     <layout:block name="styleLinks">
 
     </layout:block>
@@ -30,19 +30,10 @@
                 <img src="/logo.png" alt="icon-EABlog" height="120"/>
                 <h1>MUM News - EA Blog</h1>
             </a>
-            <c:choose>
-                <c:when test="${currentUser != null}">
-                    <span><a href="<c:url value="/logout"/>">Logout</a></span>
-                </c:when>
-                <c:otherwise>
-                    <span><a href="<c:url value="/login"/>">Login</a></span>
-                </c:otherwise>
-            </c:choose>
+
         </div>
         <div class="userHeader">
-            <c:if test="${currentUser != null}">
-                <span> Welcome <c:out value="${currentUser.firstname}"/> </span>
-            </c:if>
+
         </div>
     </layout:block>
 </header>
